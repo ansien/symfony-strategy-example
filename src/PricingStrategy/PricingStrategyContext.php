@@ -38,15 +38,6 @@ class PricingStrategyContext
 
     /**
      * @param string $strategyName
-     * @return PricingStrategyInterface
-     */
-    public function getStrategy(string $strategyName): PricingStrategyInterface
-    {
-        return $this->strategies[$strategyName];
-    }
-
-    /**
-     * @param string $strategyName
      * @param PricingStrategyInterface $strategy
      */
     public function addStrategy(string $strategyName, PricingStrategyInterface $strategy): void
