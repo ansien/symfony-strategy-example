@@ -26,16 +26,26 @@ class TestProduct
      */
     private $price;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return null|string
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return TestProduct
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -43,11 +53,18 @@ class TestProduct
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getPrice()
     {
         return $this->price;
     }
 
+    /**
+     * @param $price
+     * @return TestProduct
+     */
     public function setPrice($price): self
     {
         $this->price = $price;
