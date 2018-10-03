@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TestProduct index{% endblock %}
+
+{% block body %}
+    <h1>TestProduct index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Discount price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for test_product in test_products %}
+            <tr>
+                <td>{{ test_product.id }}</td>
+                <td>{{ test_product.name }}</td>
+                <td>{{ '€ ' ~ test_product.price }}</td>
+                <td>{{ '€ ' ~ discounted_prices[test_product.id] }}</td>
+                <td>
+                    <a href="{{ path('test_product_show', {'id': test_product.id}) }}">show</a>
+                    <a href="{{ path('test_product_edit', {'id': test_product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('test_product_new') }}">Create new</a>
+{% endblock %}
